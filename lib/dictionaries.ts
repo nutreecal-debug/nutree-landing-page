@@ -1,0 +1,188 @@
+import type { Dictionary } from "./types";
+
+export const en: Dictionary = {
+  lang: "en",
+  meta: {
+    title: "Nutree — Track Calories with AI",
+    description:
+      "Snap a photo, describe your meal, or log it manually. Nutree helps you track calories, macros, water, steps, and weight in one simple app.",
+  },
+  header: {
+    features: "Features",
+    howItWorks: "How it Works",
+    pricing: "Pricing",
+    downloadApp: "Download App",
+    switchLabel: "العربية",
+    switchHref: "/ar",
+  },
+  hero: {
+    eyebrow: "AI-Powered Calorie Tracking",
+    headline: [
+      { text: "Track " },
+      { text: "calories", highlight: true },
+      { text: " with " },
+      { text: "AI", highlight: true },
+      { text: " in seconds" },
+    ],
+    subtext:
+      "Snap a photo, describe your meal, or log it manually. Nutree helps you track calories, macros, water, steps, and weight in one simple app.",
+    downloadApp: "Download App",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+  },
+  macros: {
+    title: "Track every macro that matters",
+    items: [
+      { emoji: "🔥", label: "Calories" },
+      { emoji: "🥩", label: "Protein" },
+      { emoji: "🌽", label: "Carbs" },
+      { emoji: "🥑", label: "Fat" },
+    ],
+  },
+  features: {
+    title: "Everything you need in one app",
+    subtitle:
+      "Nutree brings every part of your health journey into a single, simple experience.",
+    items: [
+      { icon: "camera", title: "AI food photo analysis" },
+      { icon: "mic", title: "Voice and text meal logging" },
+      { icon: "flame", title: "Daily calories and macros" },
+      { icon: "droplets", title: "Water and steps tracking" },
+      { icon: "scale", title: "Weight progress" },
+      { icon: "bookmark", title: "Saved meals and history" },
+    ],
+  },
+  howItWorks: {
+    title: "How it works",
+    subtitle: "Getting started with Nutree takes less than a minute.",
+    steps: [
+      { number: "1", title: "Complete setup" },
+      { number: "2", title: "Log your meals" },
+      { number: "3", title: "Track your progress" },
+    ],
+  },
+  pricing: {
+    title: "Simple, honest pricing",
+    name: "Nutree Premium",
+    price: "129 SAR",
+    period: "/ year",
+    features: [
+      "AI food photo analysis",
+      "Voice, text, and manual logging",
+      "Progress and macro tracking",
+      "Saved meals",
+      "Smart insights",
+    ],
+    cta: "Get Started",
+    note: "Cancel anytime.",
+  },
+  download: {
+    title: "Get Nutree today",
+    subtitle: "Free to download on iPhone and Android.",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+  },
+  footer: {
+    tagline: "AI calorie tracking, made simple.",
+    terms: "Terms",
+    privacy: "Privacy",
+    support: "Support",
+    copyright: "© 2026 Nutree. All rights reserved.",
+  },
+};
+
+export const ar: Dictionary = {
+  lang: "ar",
+  meta: {
+    title: "نيوتري — تتبع السعرات بالذكاء الاصطناعي",
+    description:
+      "صور وجبتك، اوصفها، أو سجلها يدويًا. نيوتري يساعدك تتابع السعرات، الماكروز، الماء، الخطوات، والوزن من تطبيق واحد.",
+  },
+  header: {
+    features: "الميزات",
+    howItWorks: "كيف يعمل",
+    pricing: "الأسعار",
+    downloadApp: "حمّل التطبيق",
+    switchLabel: "English",
+    switchHref: "/en",
+  },
+  hero: {
+    eyebrow: "تتبع السعرات بالذكاء الاصطناعي",
+    headline: [
+      { text: "تتبع " },
+      { text: "سعراتك", highlight: true },
+      { text: " " },
+      { text: "بالذكاء الاصطناعي", highlight: true },
+      { text: " في ثواني" },
+    ],
+    subtext:
+      "صور وجبتك، اوصفها، أو سجلها يدويًا. نيوتري يساعدك تتابع السعرات، الماكروز، الماء، الخطوات، والوزن من تطبيق واحد.",
+    downloadApp: "حمّل التطبيق",
+    appStore: "آب ستور",
+    googlePlay: "جوجل بلاي",
+  },
+  macros: {
+    title: "تابع كل ماكرو يهمك",
+    items: [
+      { emoji: "🔥", label: "السعرات" },
+      { emoji: "🥩", label: "البروتين" },
+      { emoji: "🌽", label: "الكارب" },
+      { emoji: "🥑", label: "الدهون" },
+    ],
+  },
+  features: {
+    title: "كل ما تحتاجه في تطبيق واحد",
+    subtitle: "نيوتري يجمع كل جوانب رحلتك الصحية في تجربة واحدة بسيطة.",
+    items: [
+      { icon: "camera", title: "تحليل الوجبات بالذكاء الاصطناعي" },
+      { icon: "mic", title: "تسجيل بالصوت أو النص" },
+      { icon: "flame", title: "متابعة السعرات والماكروز" },
+      { icon: "droplets", title: "تتبع الماء والخطوات" },
+      { icon: "scale", title: "متابعة الوزن" },
+      { icon: "bookmark", title: "حفظ الوجبات والسجل" },
+    ],
+  },
+  howItWorks: {
+    title: "كيف يعمل",
+    subtitle: "تبدأ رحلتك مع نيوتري في أقل من دقيقة.",
+    steps: [
+      { number: "١", title: "أكمل الإعداد" },
+      { number: "٢", title: "سجل وجباتك" },
+      { number: "٣", title: "تابع تقدمك" },
+    ],
+  },
+  pricing: {
+    title: "أسعار بسيطة وواضحة",
+    name: "نيوتري بريميوم",
+    price: "129 ريال",
+    period: "سنويًا",
+    features: [
+      "تحليل الوجبات بالذكاء الاصطناعي",
+      "تسجيل بالصوت والنص واليدوي",
+      "متابعة التقدم والماكروز",
+      "حفظ الوجبات",
+      "رؤى ذكية",
+    ],
+    cta: "ابدأ الآن",
+    note: "ألغِ الاشتراك في أي وقت.",
+  },
+  download: {
+    title: "حمّل نيوتري الآن",
+    subtitle: "متوفر مجانًا على آيفون وأندرويد.",
+    appStore: "آب ستور",
+    googlePlay: "جوجل بلاي",
+  },
+  footer: {
+    tagline: "تتبع السعرات بالذكاء الاصطناعي، ببساطة.",
+    terms: "الشروط",
+    privacy: "الخصوصية",
+    support: "الدعم",
+    copyright: "© 2026 نيوتري. جميع الحقوق محفوظة.",
+  },
+};
+
+export const dictionaries = { en, ar };
+
+export function getDictionary(lang: string): Dictionary {
+  return lang === "ar" ? ar : en;
+}
