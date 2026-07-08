@@ -13,15 +13,30 @@ export default function Footer({ dict }: { dict: Dictionary }) {
             <p className="max-w-xs text-center text-sm text-muted sm:text-start">{footer.tagline}</p>
           </div>
 
-          <nav className="flex items-center gap-6">
-            <a href="#" className="text-sm font-medium text-ink/80 transition hover:text-ink">
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:justify-start">
+            <a
+              href={`/${dict.lang}/terms`}
+              className="text-sm font-medium text-ink/80 transition hover:text-ink"
+            >
               {footer.terms}
             </a>
-            <a href="#" className="text-sm font-medium text-ink/80 transition hover:text-ink">
+            <a
+              href={`/${dict.lang}/privacy`}
+              className="text-sm font-medium text-ink/80 transition hover:text-ink"
+            >
               {footer.privacy}
             </a>
-            <a href="#" className="text-sm font-medium text-ink/80 transition hover:text-ink">
+            <a
+              href={`/${dict.lang}/support`}
+              className="text-sm font-medium text-ink/80 transition hover:text-ink"
+            >
               {footer.support}
+            </a>
+            <a
+              href={`/${dict.lang}/sources`}
+              className="text-sm font-medium text-ink/80 transition hover:text-ink"
+            >
+              {footer.sources}
             </a>
           </nav>
         </div>

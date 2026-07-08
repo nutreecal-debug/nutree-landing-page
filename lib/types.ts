@@ -69,6 +69,7 @@ export interface Dictionary {
     terms: string;
     privacy: string;
     support: string;
+    sources: string;
     copyright: string;
   };
 }

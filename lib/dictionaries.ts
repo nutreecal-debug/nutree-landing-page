@@ -73,6 +73,7 @@ export const en: Dictionary = {
     terms: "Terms",
     privacy: "Privacy",
     support: "Support",
+    sources: "Health Information & Sources",
     copyright: "© 2026 Nutree. All rights reserved.",
   },
 };
@@ -146,9 +147,10 @@ export const ar: Dictionary = {
   },
   footer: {
     tagline: "تتبع السعرات بالذكاء الاصطناعي، ببساطة.",
-    terms: "الشروط",
-    privacy: "الخصوصية",
+    terms: "الشروط والأحكام",
+    privacy: "سياسة الخصوصية",
     support: "الدعم",
+    sources: "المعلومات والمصادر الصحية",
     copyright: "© 2026 نيوتري. جميع الحقوق محفوظة.",
   },
 };
