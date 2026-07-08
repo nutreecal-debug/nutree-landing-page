@@ -15,7 +15,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       />
 
       <div className="container">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal className="order-2 lg:order-1">
             <div className="border-t border-ink/10 pt-8 sm:pt-10">
               <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
@@ -30,7 +30,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             </div>
           </Reveal>
 
-          <Reveal delay={150} className="order-1 flex justify-center lg:order-2 lg:justify-end">
+          <Reveal delay={150} className="order-1 flex justify-end lg:order-2">
             <PhoneMockup lang={dict.lang} />
           </Reveal>
         </div>
