@@ -5,7 +5,7 @@ export default function HowItWorks({ dict }: { dict: Dictionary }) {
   const { howItWorks } = dict;
 
   return (
-    <section id="how-it-works" className="py-20 sm:py-28">
+    <section id="how-it-works" className="pb-20 pt-8 sm:pb-28 sm:pt-10">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-bold text-ink sm:text-4xl">{howItWorks.title}</h2>
