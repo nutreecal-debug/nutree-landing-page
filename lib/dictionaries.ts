@@ -16,19 +16,7 @@ export const en: Dictionary = {
     switchHref: "/ar",
   },
   hero: {
-    eyebrow: "AI-Powered Calorie Tracking",
-    headline: [
-      { text: "Track " },
-      { text: "calories", highlight: true },
-      { text: " with " },
-      { text: "AI", highlight: true },
-      { text: " in seconds" },
-    ],
-    subtext:
-      "Snap a photo, describe your meal, or log it manually. Nutree helps you track calories, macros, water, steps, and weight in one simple app.",
-    downloadApp: "Download App",
-    appStore: "App Store",
-    googlePlay: "Google Play",
+    headline: [{ text: "Snap Your Meals. Track Your Calories. Reach Your Goals." }],
   },
   macros: {
     title: "Track every macro that matters",
@@ -79,8 +67,6 @@ export const en: Dictionary = {
   download: {
     title: "Get Nutree today",
     subtitle: "Free to download on iPhone and Android.",
-    appStore: "App Store",
-    googlePlay: "Google Play",
   },
   footer: {
     tagline: "AI calorie tracking, made simple.",
@@ -107,19 +93,7 @@ export const ar: Dictionary = {
     switchHref: "/en",
   },
   hero: {
-    eyebrow: "تتبع السعرات بالذكاء الاصطناعي",
-    headline: [
-      { text: "تتبع " },
-      { text: "سعراتك", highlight: true },
-      { text: " " },
-      { text: "بالذكاء الاصطناعي", highlight: true },
-      { text: " في ثواني" },
-    ],
-    subtext:
-      "صور وجبتك، اوصفها، أو سجلها يدويًا. نيوتري يساعدك تتابع السعرات، الماكروز، الماء، الخطوات، والوزن من تطبيق واحد.",
-    downloadApp: "حمّل التطبيق",
-    appStore: "آب ستور",
-    googlePlay: "جوجل بلاي",
+    headline: [{ text: "صوّر وجباتك. تتبع سعراتك. حقق أهدافك." }],
   },
   macros: {
     title: "تابع كل ماكرو يهمك",
@@ -169,8 +143,6 @@ export const ar: Dictionary = {
   download: {
     title: "حمّل نيوتري الآن",
     subtitle: "متوفر مجانًا على آيفون وأندرويد.",
-    appStore: "آب ستور",
-    googlePlay: "جوجل بلاي",
   },
   footer: {
     tagline: "تتبع السعرات بالذكاء الاصطناعي، ببساطة.",

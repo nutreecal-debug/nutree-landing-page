@@ -35,12 +35,7 @@ export interface Dictionary {
     switchHref: string;
   };
   hero: {
-    eyebrow: string;
     headline: HeadlineSegment[];
-    subtext: string;
-    downloadApp: string;
-    appStore: string;
-    googlePlay: string;
   };
   macros: {
     title: string;
@@ -68,8 +63,6 @@ export interface Dictionary {
   download: {
     title: string;
     subtitle: string;
-    appStore: string;
-    googlePlay: string;
   };
   footer: {
     tagline: string;

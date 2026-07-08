@@ -17,11 +17,7 @@ export default function DownloadSection({ dict }: { dict: Dictionary }) {
             <h2 className="text-balance text-3xl font-bold text-white sm:text-4xl">{download.title}</h2>
             <p className="mx-auto mt-4 max-w-md text-lg text-white/70">{download.subtitle}</p>
             <div className="mt-9 flex justify-center">
-              <AppStoreButtons
-                appStoreLabel={download.appStore}
-                googlePlayLabel={download.googlePlay}
-                variant="light"
-              />
+              <AppStoreButtons lang={dict.lang} variant="light" />
             </div>
           </div>
         </Reveal>
