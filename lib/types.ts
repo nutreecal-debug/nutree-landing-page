@@ -36,7 +36,10 @@ export interface Dictionary {
   };
   hero: {
     headline: HeadlineSegment[];
-    mobileHeadline: string;
+    mobileHeadline: {
+      line1: string;
+      line2: string;
+    };
     downloadLabel: string;
   };
   macros: {

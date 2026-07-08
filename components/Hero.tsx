@@ -18,8 +18,9 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         {/* Mobile / tablet: headline -> phone -> download, all stacked and centered */}
         <div className="flex flex-col items-center text-center lg:hidden">
           <Reveal>
-            <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-ink sm:text-5xl">
-              {hero.mobileHeadline}
+            <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
+              <span className="block text-ink">{hero.mobileHeadline.line1}</span>
+              <span className="block text-brand">{hero.mobileHeadline.line2}</span>
             </h1>
           </Reveal>
 

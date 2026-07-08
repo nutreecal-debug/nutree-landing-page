@@ -17,7 +17,10 @@ export const en: Dictionary = {
   },
   hero: {
     headline: [{ text: "Snap Your Meals. Track Your Calories. Reach Your Goals." }],
-    mobileHeadline: "Scan Your Meal",
+    mobileHeadline: {
+      line1: "Track calories with",
+      line2: "just a photo",
+    },
     downloadLabel: "Download the app",
   },
   macros: {
@@ -97,7 +100,10 @@ export const ar: Dictionary = {
   },
   hero: {
     headline: [{ text: "صوّر وجبتك. تتبع سعراتك. وصل لهدفك." }],
-    mobileHeadline: "امسح وجبتك",
+    mobileHeadline: {
+      line1: "تتبع سعراتك",
+      line2: "بصورة فقط",
+    },
     downloadLabel: "حمّل التطبيق",
   },
   macros: {
