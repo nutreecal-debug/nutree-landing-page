@@ -94,7 +94,7 @@ export const ar: Dictionary = {
     switchHref: "/en",
   },
   hero: {
-    headline: [{ text: "صوّر وجباتك. تتبع سعراتك. حقق أهدافك." }],
+    headline: [{ text: "صوّر وجبتك. تتبع سعراتك. وصل لهدفك." }],
   },
   macros: {
     title: "تابع كل ماكرو يهمك",
