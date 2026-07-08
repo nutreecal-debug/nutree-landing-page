@@ -17,6 +17,8 @@ export const en: Dictionary = {
   },
   hero: {
     headline: [{ text: "Snap Your Meals. Track Your Calories. Reach Your Goals." }],
+    mobileHeadline: "Scan Your Meal",
+    downloadLabel: "Download the app",
   },
   macros: {
     title: "Track every macro that matters",
@@ -95,6 +97,8 @@ export const ar: Dictionary = {
   },
   hero: {
     headline: [{ text: "صوّر وجبتك. تتبع سعراتك. وصل لهدفك." }],
+    mobileHeadline: "امسح وجبتك",
+    downloadLabel: "حمّل التطبيق",
   },
   macros: {
     title: "تابع كل ماكرو يهمك",

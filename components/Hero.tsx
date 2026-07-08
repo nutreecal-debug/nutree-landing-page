@@ -15,10 +15,29 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       />
 
       <div className="container">
-        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <Reveal className="order-2 lg:order-1">
-            <div className="border-t border-ink/10 pt-8 sm:pt-10">
-              <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
+        {/* Mobile / tablet: headline -> phone -> download, all stacked and centered */}
+        <div className="flex flex-col items-center text-center lg:hidden">
+          <Reveal>
+            <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-ink sm:text-5xl">
+              {hero.mobileHeadline}
+            </h1>
+          </Reveal>
+
+          <Reveal delay={100} className="mt-8">
+            <PhoneMockup lang={dict.lang} tilt={false} />
+          </Reveal>
+
+          <Reveal delay={200} className="mt-8 flex flex-col items-center gap-4">
+            <span className="text-lg font-bold text-ink">{hero.downloadLabel}</span>
+            <AppStoreButtons lang={dict.lang} />
+          </Reveal>
+        </div>
+
+        {/* Desktop: headline+badges on one side, phone on the other */}
+        <div className="hidden lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+          <Reveal>
+            <div className="border-t border-ink/10 pt-10">
+              <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-ink lg:text-[3.4rem]">
                 {hero.headline.map((segment, i) => (
                   <span key={i}>{segment.text}</span>
                 ))}
@@ -30,12 +49,12 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             </div>
           </Reveal>
 
-          <Reveal delay={150} className="order-1 flex justify-end lg:order-2">
+          <Reveal delay={150} className="flex justify-end">
             <PhoneMockup lang={dict.lang} />
           </Reveal>
         </div>
 
-        <Reveal delay={260} className="mt-14 flex justify-center">
+        <Reveal delay={260} className="mt-10 flex justify-center lg:mt-14">
           <ScrollCue />
         </Reveal>
       </div>

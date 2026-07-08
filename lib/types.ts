@@ -36,6 +36,8 @@ export interface Dictionary {
   };
   hero: {
     headline: HeadlineSegment[];
+    mobileHeadline: string;
+    downloadLabel: string;
   };
   macros: {
     title: string;

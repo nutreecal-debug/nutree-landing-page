@@ -15,7 +15,7 @@ const ALT: Record<Lang, string> = {
   ar: "الشاشة الرئيسية في تطبيق نيوتري",
 };
 
-export default function PhoneMockup({ lang }: { lang: Lang }) {
+export default function PhoneMockup({ lang, tilt = true }: { lang: Lang; tilt?: boolean }) {
   const shot = SHOTS[lang];
 
   return (
@@ -26,7 +26,7 @@ export default function PhoneMockup({ lang }: { lang: Lang }) {
         <Trophy className="h-4 w-4 text-brand sm:h-6 sm:w-6" strokeWidth={1.75} />
       </div>
 
-      <div className="rotate-3">
+      <div className={tilt ? "rotate-3" : ""}>
         <div className="animate-float">
           <div className="relative overflow-hidden rounded-[1.8rem] border-[5px] border-navy bg-navy shadow-soft sm:rounded-[2.6rem] sm:border-[8px]">
             <div className="absolute left-1/2 top-0 z-10 h-3.5 w-16 -translate-x-1/2 rounded-b-lg bg-navy sm:h-5 sm:w-24 sm:rounded-b-xl" />
