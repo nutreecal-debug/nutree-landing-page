@@ -40,10 +40,10 @@ export default function PaymentScreen({ onBack }: { onBack: () => void }) {
       <div className="mt-6 w-full rounded-2xl bg-paper-soft p-5 text-left ring-1 ring-black/5">
         <p className="text-xs font-bold uppercase tracking-wide text-muted">Nutree Pro</p>
         <div className="mt-1 flex items-end gap-1.5">
-          <span className="text-3xl font-extrabold text-ink">299 SAR</span>
+          <span className="text-3xl font-extrabold text-ink">129 SAR</span>
           <span className="pb-0.5 text-sm text-muted">/ year</span>
         </div>
-        <p className="mt-1 text-xs text-ink/40">≈ 24.92 SAR / month</p>
+        <p className="mt-1 text-xs text-ink/40">≈ 10.75 SAR / month</p>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-5 w-full text-left">
@@ -79,7 +79,7 @@ export default function PaymentScreen({ onBack }: { onBack: () => void }) {
           <div className="mt-5 animate-fade-slide rounded-2xl border-2 border-dashed border-brand/40 bg-brand/5 p-4 text-sm leading-relaxed text-ink/70">
             <p className="font-semibold text-brand-dark">Checkout ready to connect</p>
             <p className="mt-1">
-              In production, this continues to Stream&apos;s secure checkout to complete your 299
+              In production, this continues to Stream&apos;s secure checkout to complete your 129
               SAR payment. Connect your live Stream checkout URL here to go live.
             </p>
           </div>

@@ -35,7 +35,7 @@ export function PaymentCardIllustration() {
       </div>
 
       <div className="absolute -right-1 top-0 flex animate-float items-center gap-1 rounded-2xl bg-paper px-3 py-2 shadow-card">
-        <span className="text-sm font-extrabold text-brand">299 SAR</span>
+        <span className="text-sm font-extrabold text-brand">129 SAR</span>
       </div>
 
       <div
