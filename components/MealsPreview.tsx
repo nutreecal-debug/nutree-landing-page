@@ -7,14 +7,14 @@ const CONTENT: Record<
   en: {
     mealsLabel: "Meals (1)",
     viewAll: "View All",
-    category: "Snack",
+    category: "Lunch",
     time: "3:57 PM",
     mealName: "Classic Cheeseburger",
   },
   ar: {
     mealsLabel: "الوجبات (1)",
     viewAll: "عرض الكل",
-    category: "سناك",
+    category: "غداء",
     time: "٣:٥٧ م",
     mealName: "تشيز برجر كلاسيكي",
   },
