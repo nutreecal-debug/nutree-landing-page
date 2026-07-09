@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { Lock, Loader2, ChevronDown } from "lucide-react";
-import StepHeader from "../StepHeader";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SUPPORT_EMAIL = "Nutree.cal@gmail.com";
 
 type Status = "idle" | "loading" | "ready";
 
-export default function PaymentScreen({ onBack }: { onBack: () => void }) {
+export default function PaymentScreen() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>("idle");
@@ -28,10 +27,8 @@ export default function PaymentScreen({ onBack }: { onBack: () => void }) {
 
   return (
     <div className="flex flex-col items-center px-1 pt-1 text-center">
-      <StepHeader label="Payment" onBack={onBack} />
-
-      <h2 className="mt-3 text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
-        Complete your subscription
+      <h2 className="text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
+        Subscribe to Nutree Pro
       </h2>
       <p className="mt-2 max-w-xs text-balance text-sm leading-relaxed text-muted">
         One payment unlocks a full year of Nutree Pro.
@@ -48,7 +45,7 @@ export default function PaymentScreen({ onBack }: { onBack: () => void }) {
 
       <form onSubmit={handleSubmit} className="mt-5 w-full text-left">
         <label htmlFor="subscribe-email" className="text-xs font-semibold text-ink/70">
-          Email address
+          Your email
         </label>
         <input
           id="subscribe-email"
@@ -62,7 +59,7 @@ export default function PaymentScreen({ onBack }: { onBack: () => void }) {
           className="mt-1.5 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20 disabled:opacity-60"
         />
         <p className="mt-1.5 text-xs text-ink/40">
-          We&apos;ll send your activation code to this email right after payment.
+          We&apos;ll send your activation code to this email.
         </p>
         {error && <p className="mt-1.5 text-xs font-semibold text-red-600">{error}</p>}
 
@@ -107,8 +104,9 @@ export default function PaymentScreen({ onBack }: { onBack: () => void }) {
         </ol>
       )}
 
-      <p className="mt-6 text-xs text-ink/40">
-        Need help?{" "}
+      <p className="mt-6 text-xs leading-relaxed text-ink/40">
+        Have an issue? Reach us at:
+        <br />
         <a href={`mailto:${SUPPORT_EMAIL}`} className="font-semibold text-ink/60 underline underline-offset-2">
           {SUPPORT_EMAIL}
         </a>

@@ -2,16 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import ProgressDots from "./ProgressDots";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import BuyScreen from "./screens/BuyScreen";
 import EmailCodeScreen from "./screens/EmailCodeScreen";
 import ActivateScreen from "./screens/ActivateScreen";
 import PaymentScreen from "./screens/PaymentScreen";
-
-const TOTAL_STEPS = 6;
 
 export default function SubscribeFlow() {
   const [step, setStep] = useState(0);
@@ -19,6 +16,13 @@ export default function SubscribeFlow() {
 
   const goToPayment = () => setView("payment");
   const backToOnboarding = () => setView("onboarding");
+
+  const onBack =
+    view === "payment"
+      ? backToOnboarding
+      : step > 0
+        ? () => setStep((s) => s - 1)
+        : undefined;
 
   return (
     <div className="flex min-h-screen flex-col bg-paper-soft">
@@ -40,31 +44,33 @@ export default function SubscribeFlow() {
       </header>
 
       <main className="flex flex-1 items-center justify-center px-5 pb-10 sm:px-8">
-        <div className="w-full max-w-md rounded-4xl bg-paper p-7 shadow-soft sm:rounded-5xl sm:p-10">
-          {view === "onboarding" && (
-            <div className="mb-6">
-              <ProgressDots total={TOTAL_STEPS} current={step} />
-            </div>
-          )}
+        <div className="relative w-full max-w-md rounded-4xl bg-paper p-7 shadow-soft sm:rounded-5xl sm:p-10">
+          <div className="mb-2 flex h-7 items-center">
+            {onBack && (
+              <button
+                onClick={onBack}
+                aria-label="Back"
+                className="grid h-7 w-7 place-items-center rounded-full text-ink/40 transition hover:bg-ink/5 hover:text-ink"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            )}
+          </div>
 
           <div key={view === "payment" ? "payment" : step} className="animate-fade-slide">
-            {view === "payment" && <PaymentScreen onBack={backToOnboarding} />}
+            {view === "payment" && <PaymentScreen />}
 
             {view === "onboarding" && step === 0 && <WelcomeScreen onStart={() => setStep(1)} />}
-            {view === "onboarding" && step === 1 && (
-              <BuyScreen onNext={() => setStep(2)} onBack={() => setStep(0)} />
-            )}
-            {view === "onboarding" && step === 2 && (
-              <EmailCodeScreen onNext={() => setStep(3)} onBack={() => setStep(1)} />
-            )}
+            {view === "onboarding" && step === 1 && <BuyScreen onNext={() => setStep(2)} />}
+            {view === "onboarding" && step === 2 && <EmailCodeScreen onNext={() => setStep(3)} />}
             {view === "onboarding" && step === 3 && (
-              <ActivateScreen sub={1} onNext={() => setStep(4)} onBack={() => setStep(2)} />
+              <ActivateScreen sub={1} onNext={() => setStep(4)} />
             )}
             {view === "onboarding" && step === 4 && (
-              <ActivateScreen sub={2} onNext={() => setStep(5)} onBack={() => setStep(3)} />
+              <ActivateScreen sub={2} onNext={() => setStep(5)} />
             )}
             {view === "onboarding" && step === 5 && (
-              <ActivateScreen sub={3} onNext={goToPayment} onBack={() => setStep(4)} />
+              <ActivateScreen sub={3} onNext={goToPayment} />
             )}
           </div>
         </div>
