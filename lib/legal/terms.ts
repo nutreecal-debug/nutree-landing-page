@@ -34,7 +34,7 @@ export const terms: Record<Lang, LegalPageContent> = {
       {
         heading: "Subscriptions, Trials, and Payments",
         paragraphs: [
-          "Nutree offers a free tier as well as a paid Nutree Premium subscription. Paid subscriptions renew automatically at the end of each billing period unless cancelled beforehand through your App Store or Google Play account settings.",
+          "Nutree offers a free tier as well as a paid Nutree Pro subscription. Paid subscriptions renew automatically at the end of each billing period unless cancelled beforehand through your App Store or Google Play account settings.",
           "Prices are shown in the App before purchase and may vary by region. Refunds are handled according to the policies of the App Store or Google Play, as applicable, since all payments are processed through those platforms.",
         ],
       },
@@ -132,7 +132,7 @@ export const terms: Record<Lang, LegalPageContent> = {
       {
         heading: "الاشتراكات والفترات التجريبية والمدفوعات",
         paragraphs: [
-          "يوفر نيوتري نسخة مجانية بالإضافة إلى اشتراك نيوتري بريميوم المدفوع. تتجدد الاشتراكات المدفوعة تلقائيًا في نهاية كل فترة فوترة ما لم يتم إلغاؤها مسبقًا من إعدادات حسابك في متجر التطبيقات أو جوجل بلاي.",
+          "يوفر نيوتري نسخة مجانية بالإضافة إلى اشتراك نيوتري برو المدفوع. تتجدد الاشتراكات المدفوعة تلقائيًا في نهاية كل فترة فوترة ما لم يتم إلغاؤها مسبقًا من إعدادات حسابك في متجر التطبيقات أو جوجل بلاي.",
           "تظهر الأسعار داخل التطبيق قبل الشراء وقد تختلف حسب المنطقة. تتم معالجة المبالغ المستردة وفق سياسات متجر التطبيقات أو جوجل بلاي، بما أن جميع المدفوعات تتم معالجتها عبر هذه المنصات.",
         ],
       },

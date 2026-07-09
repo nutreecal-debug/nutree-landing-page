@@ -61,8 +61,8 @@ export const support: Record<Lang, SupportContent> = {
         title: "Subscription & Billing",
         items: [
           {
-            q: "What does Nutree Premium include?",
-            a: "Premium unlocks AI food photo analysis, voice and manual logging, full progress and macro tracking, saved meals, and smart insights.",
+            q: "What does Nutree Pro include?",
+            a: "Pro unlocks AI food photo analysis, voice and manual logging, full progress and macro tracking, saved meals, and smart insights.",
           },
           {
             q: "How do I cancel my subscription?",
@@ -153,8 +153,8 @@ export const support: Record<Lang, SupportContent> = {
         title: "الاشتراك والفوترة",
         items: [
           {
-            q: "ماذا يشمل اشتراك نيوتري بريميوم؟",
-            a: "يفتح بريميوم تحليل صور الطعام بالذكاء الاصطناعي، والتسجيل الصوتي واليدوي، ومتابعة كاملة للتقدم والماكروز، والوجبات المحفوظة، والرؤى الذكية.",
+            q: "ماذا يشمل اشتراك نيوتري برو؟",
+            a: "يفتح برو تحليل صور الطعام بالذكاء الاصطناعي، والتسجيل الصوتي واليدوي، ومتابعة كاملة للتقدم والماكروز، والوجبات المحفوظة، والرؤى الذكية.",
           },
           {
             q: "كيف ألغي اشتراكي؟",
