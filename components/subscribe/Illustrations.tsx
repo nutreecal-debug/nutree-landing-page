@@ -67,7 +67,7 @@ function CardIcon() {
   );
 }
 
-export function PaymentCardIllustration() {
+export function PaymentCardIllustration({ price }: { price: string }) {
   return (
     <div className="relative mx-auto w-full max-w-[220px]">
       <div className="rounded-2xl bg-paper-soft p-4 pb-6 shadow-soft ring-1 ring-black/5">
@@ -78,7 +78,7 @@ export function PaymentCardIllustration() {
         </div>
         <div className="mt-3 flex flex-col items-center gap-3">
           <span className="rounded-lg bg-brand/15 px-4 py-1.5 text-lg font-extrabold text-brand-dark">
-            129 SAR
+            {price}
           </span>
           <CardIcon />
         </div>
@@ -96,7 +96,7 @@ export function PaymentCardIllustration() {
   );
 }
 
-export function EnvelopeIllustration() {
+export function EnvelopeIllustration({ code }: { code: string }) {
   return (
     <div className="relative mx-auto h-32 w-full max-w-[220px] sm:h-36">
       <AccentDot className="left-3 top-2 h-2 w-2" color="blue" />
@@ -109,7 +109,7 @@ export function EnvelopeIllustration() {
       </div>
 
       <div className="absolute left-1/2 top-0 flex -translate-x-1/2 animate-float items-center rounded-xl bg-brand px-3 py-2 shadow-card">
-        <span className="font-mono text-sm font-bold tracking-[0.2em] text-white">5BNUE</span>
+        <span className="font-mono text-sm font-bold tracking-[0.2em] text-white">{code}</span>
       </div>
     </div>
   );

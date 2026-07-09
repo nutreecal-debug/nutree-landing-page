@@ -1,16 +1,23 @@
 import { StarRingIllustration } from "../Illustrations";
 import ProgressDots from "../ProgressDots";
+import type { SubscribeContent } from "@/lib/subscribeContent";
 
-export default function WelcomeScreen({ onStart }: { onStart: () => void }) {
+export default function WelcomeScreen({
+  content,
+  onStart,
+}: {
+  content: SubscribeContent;
+  onStart: () => void;
+}) {
   return (
     <div className="flex flex-col items-center px-1 pt-4 text-center">
       <StarRingIllustration />
 
-      <h1 className="mt-6 whitespace-nowrap text-xl font-extrabold tracking-tight text-ink sm:text-3xl">
-        Welcome to Nutree Pro 👋
+      <h1 className="mt-6 text-balance text-xl font-extrabold tracking-tight text-ink sm:text-3xl">
+        {content.welcome.title}
       </h1>
       <p className="mt-3 max-w-xs text-balance text-sm leading-relaxed text-muted sm:text-base">
-        Here&apos;s how you get your subscription — 3 simple steps.
+        {content.welcome.subtitle}
       </p>
 
       <div className="mt-8">
@@ -21,7 +28,7 @@ export default function WelcomeScreen({ onStart }: { onStart: () => void }) {
         onClick={onStart}
         className="mt-5 flex w-full items-center justify-center rounded-2xl bg-navy px-6 py-4 text-base font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-navy-soft"
       >
-        Let&apos;s start
+        {content.welcome.button}
       </button>
     </div>
   );

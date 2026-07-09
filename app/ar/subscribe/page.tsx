@@ -1,5 +1,5 @@
 import SubscribeFlow from "@/components/subscribe/SubscribeFlow";
 
 export default function SubscribePage() {
-  return <SubscribeFlow lang="en" />;
+  return <SubscribeFlow lang="ar" />;
 }

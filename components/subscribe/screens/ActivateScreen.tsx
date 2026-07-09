@@ -1,44 +1,27 @@
 import StepLabel from "../StepLabel";
 import PhoneStepMockup from "../PhoneStepMockup";
 import ProgressDots from "../ProgressDots";
-
-const CONTENT = {
-  1: {
-    variant: "unlock" as const,
-    title: "Open Settings and tap “Unlock premium”",
-    subtitle: "You’ll find the upgrade button at the top of the Settings screen.",
-    button: "Next",
-  },
-  2: {
-    variant: "discount" as const,
-    title: "Tap “Have a discount code?”",
-    subtitle: "It’s near the bottom of the subscription page.",
-    button: "Next",
-  },
-  3: {
-    variant: "code" as const,
-    title: "Paste your code and tap “Activate”",
-    subtitle: "Your Pro subscription unlocks instantly.",
-    button: "Continue to payment",
-  },
-};
+import type { SubscribeContent } from "@/lib/subscribeContent";
 
 export default function ActivateScreen({
+  content,
   sub,
   onNext,
 }: {
+  content: SubscribeContent;
   sub: 1 | 2 | 3;
   onNext: () => void;
 }) {
-  const { variant, title, subtitle, button } = CONTENT[sub];
+  const { smallLabel, stepLabel, title, subtitle, button } = content.activate[sub - 1];
+  const variant = sub === 1 ? "unlock" : sub === 2 ? "discount" : "code";
 
   return (
     <div className="flex flex-col items-center px-1 pt-3 text-center">
-      <PhoneStepMockup step={sub} variant={variant} />
+      <PhoneStepMockup step={sub} variant={variant} content={content} />
 
-      <p className="mt-6 text-xs font-semibold text-ink/40">Activate your code in the Nutree app</p>
+      <p className="mt-6 text-xs font-semibold text-ink/40">{smallLabel}</p>
       <div className="mt-2">
-        <StepLabel>{`Step 3 • ${sub}/3`}</StepLabel>
+        <StepLabel>{stepLabel}</StepLabel>
       </div>
 
       <h2 className="mt-2 text-xl font-extrabold tracking-tight text-ink sm:text-2xl">{title}</h2>
