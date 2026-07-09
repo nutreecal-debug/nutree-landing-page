@@ -16,11 +16,7 @@ export const en: Dictionary = {
     switchHref: "/ar",
   },
   hero: {
-    headline: [{ text: "Snap Your Meals. Track Your Calories. Reach Your Goals." }],
-    mobileHeadline: {
-      line1: "Track calories with",
-      line2: "just a photo",
-    },
+    headline: [{ text: "Snap your meal and count your calories in seconds" }],
     downloadLabel: "Download the app",
   },
   macros: {
@@ -56,7 +52,7 @@ export const en: Dictionary = {
   },
   pricing: {
     title: "Simple, honest pricing",
-    name: "Nutree Premium",
+    name: "Nutree Pro",
     price: "129 SAR",
     period: "/ year",
     features: [
@@ -70,7 +66,7 @@ export const en: Dictionary = {
     note: "Cancel anytime.",
   },
   download: {
-    title: "Get Nutree today",
+    title: "Snap it. Track it. Reach your goals.",
     subtitle: "Free to download on iPhone and Android.",
   },
   footer: {
@@ -99,11 +95,7 @@ export const ar: Dictionary = {
     switchHref: "/en",
   },
   hero: {
-    headline: [{ text: "صوّر وجبتك. تتبع سعراتك. وصل لهدفك." }],
-    mobileHeadline: {
-      line1: "تتبع سعراتك",
-      line2: "بصورة فقط",
-    },
+    headline: [{ text: "صوّر وجبتك واحسب سعراتك في ثواني" }],
     downloadLabel: "حمّل التطبيق",
   },
   macros: {
@@ -138,7 +130,7 @@ export const ar: Dictionary = {
   },
   pricing: {
     title: "أسعار بسيطة وواضحة",
-    name: "نيوتري بريميوم",
+    name: "نيوتري برو",
     price: "129 ريال",
     period: "سنويًا",
     features: [
@@ -152,7 +144,7 @@ export const ar: Dictionary = {
     note: "ألغِ الاشتراك في أي وقت.",
   },
   download: {
-    title: "حمّل نيوتري الآن",
+    title: "صوّرها. تابعها. حقق هدفك.",
     subtitle: "متوفر مجانًا على آيفون وأندرويد.",
   },
   footer: {
