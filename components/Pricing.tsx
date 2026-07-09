@@ -15,7 +15,7 @@ export default function Pricing({ dict }: { dict: Dictionary }) {
 
         <Reveal delay={100} className="relative mx-auto mt-16 max-w-md">
           {pricing.badge && (
-            <span className="absolute -top-4 end-8 z-10 rounded-full bg-navy px-4 py-1.5 text-xs font-bold text-mint shadow-card">
+            <span className="absolute -top-4 right-8 z-10 rounded-full bg-brand px-4 py-1.5 text-xs font-bold text-white shadow-card">
               {pricing.badge}
             </span>
           )}
