@@ -1,15 +1,39 @@
-export default function MealsPreview() {
+import type { Lang } from "@/lib/types";
+
+const CONTENT: Record<
+  Lang,
+  { mealsLabel: string; viewAll: string; category: string; time: string; mealName: string }
+> = {
+  en: {
+    mealsLabel: "Meals (1)",
+    viewAll: "View All",
+    category: "Snack",
+    time: "3:57 PM",
+    mealName: "Classic Cheeseburger",
+  },
+  ar: {
+    mealsLabel: "الوجبات (1)",
+    viewAll: "عرض الكل",
+    category: "سناك",
+    time: "٣:٥٧ م",
+    mealName: "تشيز برجر كلاسيكي",
+  },
+};
+
+export default function MealsPreview({ lang }: { lang: Lang }) {
+  const t = CONTENT[lang];
+
   return (
-    <div className="flex flex-col gap-2 px-3 pt-2.5 sm:gap-3 sm:px-5 sm:pt-4">
+    <div dir={lang === "ar" ? "rtl" : "ltr"} className="flex flex-col gap-2 px-3 pt-2.5 sm:gap-3 sm:px-5 sm:pt-4">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-extrabold text-white sm:text-xl">Meals (1)</span>
-        <span className="text-[11px] font-semibold text-mint sm:text-sm">View All</span>
+        <span className="text-sm font-extrabold text-white sm:text-xl">{t.mealsLabel}</span>
+        <span className="text-[11px] font-semibold text-mint sm:text-sm">{t.viewAll}</span>
       </div>
 
       <div className="rounded-xl bg-navy-soft p-2 sm:rounded-2xl sm:p-3.5">
         <div className="flex items-center justify-between">
-          <span className="text-[9px] font-semibold text-white/50 sm:text-xs">Snack</span>
-          <span className="text-[9px] text-white/50 sm:text-xs">3:57 PM</span>
+          <span className="text-[9px] font-semibold text-white/50 sm:text-xs">{t.category}</span>
+          <span className="text-[9px] text-white/50 sm:text-xs">{t.time}</span>
         </div>
 
         <div className="mt-1.5 flex items-center gap-2 sm:mt-2.5 sm:gap-3">
@@ -17,7 +41,7 @@ export default function MealsPreview() {
             🍔
           </div>
           <div className="min-w-0 flex-1 text-[11px] font-bold leading-snug text-white sm:text-sm">
-            Classic Cheeseburger
+            {t.mealName}
           </div>
         </div>
 
