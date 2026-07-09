@@ -44,7 +44,7 @@ export default function Pricing({ dict }: { dict: Dictionary }) {
             </ul>
 
             <a
-              href="#download"
+              href={dict.lang === "en" ? "/en/subscribe" : "#download"}
               className="mt-9 flex w-full items-center justify-center rounded-2xl bg-brand px-6 py-4 text-base font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-brand-dark"
             >
               {pricing.cta}

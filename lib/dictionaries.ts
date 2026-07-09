@@ -65,8 +65,8 @@ export const en: Dictionary = {
       "Saved meals",
       "Smart insights",
     ],
-    cta: "Get Started",
-    note: "Cancel anytime.",
+    cta: "Subscribe Now",
+    note: "One-time payment. No auto-renewal.",
   },
   download: {
     title: "Snap it. Track it. Reach your goals.",
