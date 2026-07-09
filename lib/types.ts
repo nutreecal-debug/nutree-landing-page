@@ -54,6 +54,7 @@ export interface Dictionary {
   };
   pricing: {
     title: string;
+    subtitle?: string;
     name: string;
     price: string;
     period: string;

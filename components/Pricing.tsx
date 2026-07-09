@@ -10,6 +10,7 @@ export default function Pricing({ dict }: { dict: Dictionary }) {
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-bold text-ink sm:text-4xl">{pricing.title}</h2>
+          {pricing.subtitle && <p className="mt-4 text-lg text-muted">{pricing.subtitle}</p>}
         </Reveal>
 
         <Reveal delay={100} className="mx-auto mt-12 max-w-md">
