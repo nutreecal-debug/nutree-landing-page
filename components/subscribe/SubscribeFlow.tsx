@@ -9,6 +9,7 @@ import BuyScreen from "./screens/BuyScreen";
 import EmailCodeScreen from "./screens/EmailCodeScreen";
 import ActivateScreen from "./screens/ActivateScreen";
 import PaymentScreen from "./screens/PaymentScreen";
+import { PhoneStepImagePreload } from "./PhoneStepMockup";
 import { getSubscribeContent, type SubscribeLang } from "@/lib/subscribeContent";
 
 const LAST_STEP = 5;
@@ -37,6 +38,7 @@ export default function SubscribeFlow({ lang }: { lang: SubscribeLang }) {
   const onBack =
     view === "payment" ? backToOnboarding : step > 0 ? () => setStep((s) => s - 1) : undefined;
   const showSkip = view === "onboarding" && step !== LAST_STEP;
+  const cardKey = view === "payment" ? "payment" : step <= 2 ? String(step) : "activate";
 
   return (
     <div className="flex min-h-screen flex-col bg-paper-soft">
@@ -49,6 +51,8 @@ export default function SubscribeFlow({ lang }: { lang: SubscribeLang }) {
 
       <main className="flex flex-1 items-center justify-center px-5 pb-10 sm:px-8">
         <div className="relative w-full max-w-md rounded-4xl bg-paper p-7 shadow-soft sm:rounded-5xl sm:p-10">
+          <PhoneStepImagePreload />
+
           <div className="mb-2 flex h-7 items-center justify-between">
             {onBack ? (
               <button
@@ -73,7 +77,13 @@ export default function SubscribeFlow({ lang }: { lang: SubscribeLang }) {
             )}
           </div>
 
-          <div key={view === "payment" ? "payment" : step} className="animate-fade-slide">
+          {/*
+            Steps 3-5 (the phone-mockup activation steps) share one key so React
+            updates ActivateScreen's props in place instead of unmounting and
+            remounting it — otherwise the phone screenshot flashes blank on every
+            "Next" tap while a fresh <img> loads.
+          */}
+          <div key={cardKey} className="animate-fade-slide">
             {view === "payment" && <PaymentScreen content={content} />}
 
             {view === "onboarding" && step === 0 && (
@@ -85,14 +95,12 @@ export default function SubscribeFlow({ lang }: { lang: SubscribeLang }) {
             {view === "onboarding" && step === 2 && (
               <EmailCodeScreen content={content} onNext={() => setStep(3)} />
             )}
-            {view === "onboarding" && step === 3 && (
-              <ActivateScreen content={content} sub={1} onNext={() => setStep(4)} />
-            )}
-            {view === "onboarding" && step === 4 && (
-              <ActivateScreen content={content} sub={2} onNext={() => setStep(5)} />
-            )}
-            {view === "onboarding" && step === 5 && (
-              <ActivateScreen content={content} sub={3} onNext={goToPayment} />
+            {view === "onboarding" && step >= 3 && step <= 5 && (
+              <ActivateScreen
+                content={content}
+                sub={(step - 2) as 1 | 2 | 3}
+                onNext={() => (step < LAST_STEP ? setStep((s) => s + 1) : goToPayment())}
+              />
             )}
           </div>
         </div>
