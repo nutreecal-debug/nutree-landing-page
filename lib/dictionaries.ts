@@ -51,10 +51,13 @@ export const en: Dictionary = {
     ],
   },
   pricing: {
-    title: "Simple, honest pricing",
+    title: "A Year of Nutree Pro",
+    subtitle: "Analyze your meals and track your calories all year long.",
+    badge: "Annual Plan",
     name: "Nutree Pro",
     price: "129 SAR",
     period: "/ year",
+    description: "One annual payment for full access to all Nutree Pro features.",
     features: [
       "AI food photo analysis",
       "Voice, text, and manual logging",
@@ -130,10 +133,12 @@ export const ar: Dictionary = {
   },
   pricing: {
     title: "سنة من نيوتري برو",
-    subtitle: "استمر مع الخطة السنوية عبر الموقع لتتبع التغذية بميزات مميزة.",
+    subtitle: "حلّل وجباتك وتتبع سعراتك طوال السنة.",
+    badge: "الخطة السنوية",
     name: "نيوتري برو",
     price: "129 ريال",
-    period: "سنويًا",
+    period: "سنوياً",
+    description: "دفعة سنوية واحدة للوصول إلى جميع مزايا نيوتري برو.",
     features: [
       "تحليل الوجبات بالذكاء الاصطناعي",
       "تسجيل بالصوت والنص واليدوي",
@@ -142,7 +147,7 @@ export const ar: Dictionary = {
       "رؤى ذكية",
     ],
     cta: "ابدأ الآن",
-    note: "ألغِ الاشتراك في أي وقت.",
+    note: "إلغاء الاشتراك في أي وقت.",
   },
   download: {
     title: "صوّرها. تابعها. حقق هدفك.",

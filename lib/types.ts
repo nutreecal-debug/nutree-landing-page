@@ -55,9 +55,11 @@ export interface Dictionary {
   pricing: {
     title: string;
     subtitle?: string;
+    badge?: string;
     name: string;
     price: string;
     period: string;
+    description?: string;
     features: string[];
     cta: string;
     note: string;

@@ -13,15 +13,26 @@ export default function Pricing({ dict }: { dict: Dictionary }) {
           {pricing.subtitle && <p className="mt-4 text-lg text-muted">{pricing.subtitle}</p>}
         </Reveal>
 
-        <Reveal delay={100} className="mx-auto mt-12 max-w-md">
-          <div className="rounded-4xl border border-black/5 bg-paper p-8 shadow-soft sm:p-10">
+        <Reveal delay={100} className="relative mx-auto mt-16 max-w-md">
+          {pricing.badge && (
+            <span className="absolute -top-4 end-8 z-10 rounded-full bg-navy px-4 py-1.5 text-xs font-bold text-mint shadow-card">
+              {pricing.badge}
+            </span>
+          )}
+
+          <div className="rounded-4xl border-2 border-mint/60 bg-paper p-8 shadow-soft sm:p-10">
             <h3 className="text-xl font-bold text-ink">{pricing.name}</h3>
             <div className="mt-3 flex items-end gap-2">
-              <span className="text-4xl font-extrabold tracking-tight text-ink">{pricing.price}</span>
+              <span className="text-4xl font-extrabold tracking-tight text-brand">{pricing.price}</span>
               <span className="pb-1 text-muted">{pricing.period}</span>
             </div>
+            {pricing.description && (
+              <p className="mt-3 text-sm leading-relaxed text-muted">{pricing.description}</p>
+            )}
 
-            <ul className="mt-8 flex flex-col gap-4">
+            <div className="my-7 border-t border-black/10" aria-hidden="true" />
+
+            <ul className="flex flex-col gap-4">
               {pricing.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-3">
                   <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint/15 text-brand-dark">
