@@ -45,14 +45,6 @@ export interface SubscribeContent {
     button: string;
   };
   activate: [ActivateStepContent, ActivateStepContent, ActivateStepContent];
-  mockup: {
-    settingsLabel: string;
-    unlockLabel: string;
-    discountLabel: string;
-    codeHeader: string;
-    activateLabel: string;
-    cancelLabel: string;
-  };
   payment: {
     title: string;
     subtitle: string;
@@ -123,14 +115,6 @@ const en: SubscribeContent = {
       button: "Continue to payment",
     },
   ],
-  mockup: {
-    settingsLabel: "Settings",
-    unlockLabel: "Unlock premium",
-    discountLabel: "Have a discount code?",
-    codeHeader: "Enter your code",
-    activateLabel: "Activate",
-    cancelLabel: "Cancel",
-  },
   payment: {
     title: "Subscribe to Nutree Pro",
     subtitle: "One payment unlocks a full year of Nutree Pro.",
@@ -204,14 +188,6 @@ const ar: SubscribeContent = {
       button: "المتابعة إلى الدفع",
     },
   ],
-  mockup: {
-    settingsLabel: "الإعدادات",
-    unlockLabel: "ترقية",
-    discountLabel: "لديك كود خصم؟",
-    codeHeader: "أدخل كود الخصم",
-    activateLabel: "تفعيل",
-    cancelLabel: "إلغاء",
-  },
   payment: {
     title: "اشترك في نيوتري برو",
     subtitle: "دفعة واحدة تفتح لك اشتراك نيوتري برو لمدة سنة كاملة.",

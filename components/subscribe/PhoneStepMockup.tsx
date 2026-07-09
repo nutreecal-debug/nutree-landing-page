@@ -1,81 +1,19 @@
-import { SAMPLE_CODE, type SubscribeContent } from "@/lib/subscribeContent";
+import Image from "next/image";
 
-function AnnotationRing({ className }: { className: string }) {
-  return <span className={`absolute animate-pulse-ring rounded-full ring-2 ring-red-400/80 ${className}`} aria-hidden="true" />;
-}
-
-function DarkRow() {
-  return (
-    <div className="flex items-center justify-between rounded-lg px-3 py-2.5 opacity-40">
-      <span className="h-2 w-20 rounded-full bg-white/25" aria-hidden="true" />
-    </div>
-  );
-}
-
-function UnlockScreen({ mockup }: { mockup: SubscribeContent["mockup"] }) {
-  return (
-    <div className="flex h-full flex-col gap-2 bg-navy-soft px-3 pt-9">
-      <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-white/30">{mockup.settingsLabel}</p>
-      <DarkRow />
-      <div className="relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500/25 to-brand/25 px-3 py-2.5 ring-1 ring-white/10">
-        <AnnotationRing className="-inset-1.5 rounded-2xl" />
-        <span className="text-[10px] font-bold text-white">⭐ {mockup.unlockLabel}</span>
-      </div>
-      <DarkRow />
-      <DarkRow />
-      <DarkRow />
-    </div>
-  );
-}
-
-function DiscountScreen({ mockup }: { mockup: SubscribeContent["mockup"] }) {
-  return (
-    <div className="flex h-full flex-col items-center bg-navy-soft px-3 pt-9">
-      <div className="w-full rounded-xl bg-white/5 px-3 py-4 opacity-50">
-        <span className="mx-auto block h-2 w-24 rounded-full bg-white/20" />
-        <span className="mx-auto mt-2 block h-6 w-full rounded-lg bg-white/10" />
-      </div>
-      <div className="relative mt-auto mb-6">
-        <AnnotationRing className="-inset-2 rounded-full" />
-        <span className="text-[10px] font-semibold text-mint underline underline-offset-2">
-          🎁 {mockup.discountLabel}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function CodeScreen({ mockup }: { mockup: SubscribeContent["mockup"] }) {
-  return (
-    <div className="flex h-full flex-col justify-end bg-navy-soft">
-      <div className="w-full rounded-t-2xl bg-navy px-3 pb-4 pt-3 shadow-[0_-8px_24px_rgba(0,0,0,0.3)]">
-        <p className="mb-2.5 flex items-center justify-center gap-1 text-[10px] font-bold text-white/70">
-          🎁 {mockup.codeHeader}
-        </p>
-        <div className="animate-pop-in rounded-lg bg-white/10 px-3 py-2 text-center font-mono text-xs font-bold tracking-[0.25em] text-mint ring-1 ring-white/10">
-          {SAMPLE_CODE}
-        </div>
-        <div className="mt-2.5 rounded-lg bg-brand py-2 text-center text-[11px] font-bold text-white">
-          {mockup.activateLabel}
-        </div>
-        <p className="mt-2 text-center text-[9px] text-white/30">{mockup.cancelLabel}</p>
-      </div>
-    </div>
-  );
-}
-
-const SCREENS = { unlock: UnlockScreen, discount: DiscountScreen, code: CodeScreen };
+const STEP_IMAGES: Record<"unlock" | "discount" | "code", { src: string; position: string }> = {
+  unlock: { src: "/subscribe/step-1-unlock.jpg", position: "object-top" },
+  discount: { src: "/subscribe/step-2-discount.jpg", position: "object-bottom" },
+  code: { src: "/subscribe/step-3-code.png", position: "object-bottom" },
+};
 
 export default function PhoneStepMockup({
   step,
   variant,
-  content,
 }: {
   step: 1 | 2 | 3;
-  variant: keyof typeof SCREENS;
-  content: SubscribeContent;
+  variant: keyof typeof STEP_IMAGES;
 }) {
-  const ScreenContent = SCREENS[variant];
+  const { src, position } = STEP_IMAGES[variant];
 
   return (
     <div className="relative mx-auto w-[150px] sm:w-[170px]">
@@ -90,11 +28,8 @@ export default function PhoneStepMockup({
 
       <div className="overflow-hidden rounded-[1.6rem] border-[5px] border-navy bg-navy shadow-soft">
         <div className="absolute left-1/2 top-0 z-10 h-3 w-14 -translate-x-1/2 rounded-b-lg bg-navy" />
-        <div
-          dir={content.lang === "ar" ? "rtl" : "ltr"}
-          className="h-[280px] w-full overflow-hidden rounded-[1.2rem] bg-navy-soft sm:h-[320px]"
-        >
-          <ScreenContent mockup={content.mockup} />
+        <div className="relative h-[280px] w-full overflow-hidden rounded-[1.2rem] bg-navy-soft sm:h-[320px]">
+          <Image src={src} alt="" fill sizes="170px" className={`object-cover ${position}`} />
         </div>
       </div>
     </div>

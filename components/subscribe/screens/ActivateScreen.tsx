@@ -17,7 +17,7 @@ export default function ActivateScreen({
 
   return (
     <div className="flex flex-col items-center px-1 pt-3 text-center">
-      <PhoneStepMockup step={sub} variant={variant} content={content} />
+      <PhoneStepMockup step={sub} variant={variant} />
 
       <p className="mt-6 text-xs font-semibold text-ink/40">{smallLabel}</p>
       <div className="mt-2">
