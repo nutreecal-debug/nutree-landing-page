@@ -6,14 +6,16 @@ const STEP_IMAGES: Record<"unlock" | "discount" | "code", { src: string; positio
   code: { src: "/subscribe/step-3-code.png", position: "object-bottom" },
 };
 
-// Renders the same three images through next/image's real pipeline, hidden, so
-// their optimized URLs are fetched and cached before the user reaches Step 3.
+// Renders the same three images hidden, so the browser fetches and caches the
+// exact file used later before the user reaches Step 3. The images are served
+// unoptimized (they're already pre-sized for this slot) so there's no on-demand
+// server-side resize step that could delay the very first request.
 export function PhoneStepImagePreload() {
   return (
     <div className="hidden" aria-hidden="true">
       {Object.values(STEP_IMAGES).map(({ src }) => (
         <div key={src} className="relative h-[320px] w-[170px]">
-          <Image src={src} alt="" fill sizes="170px" priority />
+          <Image src={src} alt="" fill unoptimized priority />
         </div>
       ))}
     </div>
@@ -43,7 +45,7 @@ export default function PhoneStepMockup({
       <div className="overflow-hidden rounded-[1.6rem] border-[5px] border-navy bg-navy shadow-soft">
         <div className="absolute left-1/2 top-0 z-10 h-3 w-14 -translate-x-1/2 rounded-b-lg bg-navy" />
         <div className="relative h-[280px] w-full overflow-hidden rounded-[1.2rem] bg-navy-soft sm:h-[320px]">
-          <Image src={src} alt="" fill sizes="170px" priority className={`object-cover ${position}`} />
+          <Image src={src} alt="" fill unoptimized priority className={`object-cover ${position}`} />
         </div>
       </div>
     </div>
