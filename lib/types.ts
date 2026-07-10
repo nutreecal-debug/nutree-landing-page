@@ -31,6 +31,7 @@ export interface Dictionary {
     howItWorks: string;
     pricing: string;
     downloadApp: string;
+    downloadShort: string;
     switchLabel: string;
     switchHref: string;
   };
@@ -67,7 +68,8 @@ export interface Dictionary {
   download: {
     title: string;
     subtitle: string;
-    ctaLabel: string;
+    appStoreLabel: string;
+    googlePlayLabel: string;
   };
   footer: {
     tagline: string;

@@ -38,13 +38,6 @@ export default function MobileMenu({ dict }: { dict: Dictionary }) {
             >
               {header.switchLabel}
             </a>
-            <a
-              href="#download"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-xl bg-brand px-4 py-3 text-center font-semibold text-white transition hover:bg-brand-dark"
-            >
-              {header.downloadApp}
-            </a>
           </nav>
         </div>
       )}

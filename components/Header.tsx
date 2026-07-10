@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
+import HeaderDownloadButton from "./HeaderDownloadButton";
 import type { Dictionary } from "@/lib/types";
 
 export default function Header({ dict }: { dict: Dictionary }) {
@@ -39,7 +40,10 @@ export default function Header({ dict }: { dict: Dictionary }) {
           </a>
         </div>
 
-        <MobileMenu dict={dict} />
+        <div className="flex items-center gap-2">
+          <HeaderDownloadButton label={header.downloadShort} />
+          <MobileMenu dict={dict} />
+        </div>
       </div>
     </header>
   );

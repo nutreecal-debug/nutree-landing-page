@@ -12,6 +12,7 @@ export const en: Dictionary = {
     howItWorks: "How it Works",
     pricing: "Pricing",
     downloadApp: "Download App",
+    downloadShort: "Download",
     switchLabel: "العربية",
     switchHref: "/ar",
   },
@@ -69,9 +70,10 @@ export const en: Dictionary = {
     note: "One-time payment. No auto-renewal.",
   },
   download: {
-    title: "Snap it. Track it. Reach your goals.",
-    subtitle: "Free to download on iPhone and Android.",
-    ctaLabel: "Download the app",
+    title: "Start your Nutree journey",
+    subtitle: "Download Nutree and start tracking your meals and calories easily.",
+    appStoreLabel: "App Store",
+    googlePlayLabel: "Google Play",
   },
   footer: {
     tagline: "AI calorie tracking, made simple.",
@@ -95,6 +97,7 @@ export const ar: Dictionary = {
     howItWorks: "كيف يعمل",
     pricing: "الأسعار",
     downloadApp: "حمّل التطبيق",
+    downloadShort: "حمّل التطبيق",
     switchLabel: "English",
     switchHref: "/en",
   },
@@ -149,9 +152,10 @@ export const ar: Dictionary = {
     note: "إلغاء الاشتراك في أي وقت.",
   },
   download: {
-    title: "صوّرها. تابعها. حقق هدفك.",
-    subtitle: "متوفر مجانًا على آيفون وأندرويد.",
-    ctaLabel: "حمّل التطبيق",
+    title: "ابدأ رحلتك مع نيوتري",
+    subtitle: "حمّل نيوتري وابدأ تتبع وجباتك وسعراتك بسهولة.",
+    appStoreLabel: "App Store",
+    googlePlayLabel: "Google Play",
   },
   footer: {
     tagline: "تتبع السعرات بالذكاء الاصطناعي، ببساطة.",
