@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import PhoneMockup from "./PhoneMockup";
-import StoreBadges from "./StoreBadges";
+import AppStoreButtons from "./AppStoreButtons";
 import ScrollCue from "./ScrollCue";
 import type { Dictionary } from "@/lib/types";
 
@@ -31,7 +31,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
 
           <Reveal delay={200} className="mt-5 flex flex-col items-center gap-4 sm:mt-8">
             <span className="text-lg font-bold text-ink">{hero.downloadLabel}</span>
-            <StoreBadges lang={dict.lang} />
+            <AppStoreButtons lang={dict.lang} />
           </Reveal>
         </div>
 
@@ -47,7 +47,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             </div>
 
             <div className="mt-8">
-              <StoreBadges lang={dict.lang} className="justify-start" />
+              <AppStoreButtons lang={dict.lang} />
             </div>
           </Reveal>
 
