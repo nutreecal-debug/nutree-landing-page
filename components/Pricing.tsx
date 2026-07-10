@@ -1,6 +1,10 @@
+"use client";
+
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
 import type { Dictionary } from "@/lib/types";
+import { trackEvent } from "@/lib/gtag";
+import { PLAN_PRICE, PLAN_CURRENCY } from "@/lib/planInfo";
 
 export default function Pricing({ dict }: { dict: Dictionary }) {
   const { pricing } = dict;
@@ -45,6 +49,14 @@ export default function Pricing({ dict }: { dict: Dictionary }) {
 
             <a
               href={dict.lang === "en" ? "/en/subscribe" : "/ar/subscribe"}
+              onClick={() =>
+                trackEvent("select_plan", {
+                  plan_name: pricing.name,
+                  plan_price: PLAN_PRICE,
+                  currency: PLAN_CURRENCY,
+                  language: dict.lang,
+                })
+              }
               className="mt-9 flex w-full items-center justify-center rounded-2xl bg-brand px-6 py-4 text-base font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-brand-dark"
             >
               {pricing.cta}

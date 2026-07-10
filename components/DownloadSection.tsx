@@ -1,7 +1,10 @@
+"use client";
+
 import Reveal from "./Reveal";
 import { AppleGlyph, PlayGlyph } from "./AppStoreButtons";
 import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/storeLinks";
 import type { Dictionary } from "@/lib/types";
+import { trackEvent } from "@/lib/gtag";
 
 const BRAND_WORD: Record<Dictionary["lang"], string> = {
   en: "Nutree",
@@ -46,6 +49,7 @@ export default function DownloadSection({ dict }: { dict: Dictionary }) {
             >
               <a
                 href={APP_STORE_URL}
+                onClick={() => trackEvent("click_app_store", { language: dict.lang })}
                 className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white px-6 py-4 text-lg font-bold text-ink shadow-card transition hover:-translate-y-0.5"
               >
                 <AppleGlyph className="h-6 w-6 shrink-0" />
@@ -53,6 +57,7 @@ export default function DownloadSection({ dict }: { dict: Dictionary }) {
               </a>
               <a
                 href={GOOGLE_PLAY_URL}
+                onClick={() => trackEvent("click_google_play", { language: dict.lang })}
                 className="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-white/25 bg-white/5 px-6 py-4 text-lg font-bold text-white shadow-card backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10"
               >
                 <PlayGlyph className="h-6 w-6 shrink-0" />

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Lock, Loader2, ChevronDown } from "lucide-react";
 import { STREAM_PAYMENT_URL, SUPPORT_EMAIL, type SubscribeContent } from "@/lib/subscribeContent";
+import { trackEvent } from "@/lib/gtag";
+import { PLAN_PRICE, PLAN_CURRENCY } from "@/lib/planInfo";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -21,6 +23,12 @@ export default function PaymentScreen({ content }: { content: SubscribeContent }
     }
     setError(null);
     setLoading(true);
+    trackEvent("begin_checkout", {
+      plan_name: content.payment.planLabel,
+      plan_price: PLAN_PRICE,
+      currency: PLAN_CURRENCY,
+      language: content.lang,
+    });
     window.setTimeout(() => {
       window.location.href = STREAM_PAYMENT_URL;
     }, 900);
@@ -92,7 +100,11 @@ export default function PaymentScreen({ content }: { content: SubscribeContent }
       <p className="mt-6 text-xs leading-relaxed text-ink/40">
         {payment.supportIntro}
         <br />
-        <a href={`mailto:${SUPPORT_EMAIL}`} className="font-semibold text-ink/60 underline underline-offset-2">
+        <a
+          href={`mailto:${SUPPORT_EMAIL}`}
+          onClick={() => trackEvent("contact_support", { language: content.lang, location: "payment_screen" })}
+          className="font-semibold text-ink/60 underline underline-offset-2"
+        >
           {SUPPORT_EMAIL}
         </a>
       </p>

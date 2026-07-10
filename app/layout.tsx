@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Cairo } from "next/font/google";
+import { Suspense } from "react";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import GoogleAnalyticsPageview from "@/components/GoogleAnalyticsPageview";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,6 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${cairo.variable} bg-paper text-ink antialiased`}>
+        <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <GoogleAnalyticsPageview />
+        </Suspense>
         {children}
       </body>
     </html>

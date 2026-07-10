@@ -1,3 +1,5 @@
+"use client";
+
 import {
   contactContent,
   SUPPORT_EMAIL,
@@ -8,6 +10,7 @@ import {
   APP_DEVELOPER,
 } from "@/lib/legal/contact";
 import type { Lang } from "@/lib/types";
+import { trackEvent } from "@/lib/gtag";
 
 export default function ContactCard({ lang }: { lang: Lang }) {
   const t = contactContent[lang];
@@ -25,6 +28,7 @@ export default function ContactCard({ lang }: { lang: Lang }) {
               <span className="text-muted">{t.emailLabel} </span>
               <a
                 href={`mailto:${SUPPORT_EMAIL}`}
+                onClick={() => trackEvent("contact_support", { language: lang, location: "contact_card" })}
                 className="font-semibold text-brand-dark underline decoration-brand-dark/30 underline-offset-4 transition hover:text-brand"
               >
                 {SUPPORT_EMAIL}

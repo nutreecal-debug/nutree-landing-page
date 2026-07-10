@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/storeLinks";
 import type { Dictionary } from "@/lib/types";
+import { trackEvent } from "@/lib/gtag";
 
 const FALLBACK_DOWNLOAD_HREF = "#download-buttons";
 
@@ -46,18 +47,34 @@ export default function MobileMenu({ dict }: { dict: Dictionary }) {
             <a onClick={() => setOpen(false)} href="#how-it-works" className="rounded-lg px-3 py-3 text-start font-medium text-ink hover:bg-paper-soft">
               {header.howItWorks}
             </a>
-            <a onClick={() => setOpen(false)} href="#pricing" className="rounded-lg px-3 py-3 text-start font-medium text-ink hover:bg-paper-soft">
+            <a
+              onClick={() => {
+                setOpen(false);
+                trackEvent("click_pricing", { language: dict.lang });
+              }}
+              href="#pricing"
+              className="rounded-lg px-3 py-3 text-start font-medium text-ink hover:bg-paper-soft"
+            >
               {header.pricing}
             </a>
             <a
               href={header.switchHref}
+              onClick={() =>
+                trackEvent("change_language", {
+                  from_language: dict.lang,
+                  to_language: dict.lang === "en" ? "ar" : "en",
+                })
+              }
               className="rounded-lg px-3 py-3 text-start font-medium text-muted hover:bg-paper-soft"
             >
               {header.switchLabel}
             </a>
             <a
               href={downloadHref}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                trackEvent("click_download_app", { language: dict.lang });
+              }}
               className="mt-2 rounded-xl bg-brand px-4 py-3 text-center font-semibold text-white transition hover:bg-brand-dark"
             >
               {header.downloadShort}

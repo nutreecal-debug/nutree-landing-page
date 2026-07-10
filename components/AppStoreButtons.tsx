@@ -1,5 +1,8 @@
+"use client";
+
 import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/storeLinks";
 import type { Lang } from "@/lib/types";
+import { trackEvent } from "@/lib/gtag";
 
 export function AppleGlyph({ className = "h-7 w-7 shrink-0" }: { className?: string }) {
   return (
@@ -54,6 +57,7 @@ export default function AppStoreButtons({
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       <a
         href={APP_STORE_URL}
+        onClick={() => trackEvent("click_app_store", { language: lang })}
         className={`inline-flex items-center gap-2.5 rounded-2xl px-5 py-2.5 shadow-card transition hover:-translate-y-0.5 ${buttonStyles}`}
       >
         <AppleGlyph />
@@ -64,6 +68,7 @@ export default function AppStoreButtons({
       </a>
       <a
         href={GOOGLE_PLAY_URL}
+        onClick={() => trackEvent("click_google_play", { language: lang })}
         className={`inline-flex items-center gap-2.5 rounded-2xl px-5 py-2.5 shadow-card transition hover:-translate-y-0.5 ${buttonStyles}`}
       >
         <PlayGlyph />

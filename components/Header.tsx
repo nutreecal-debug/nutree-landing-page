@@ -1,6 +1,9 @@
+"use client";
+
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import type { Dictionary } from "@/lib/types";
+import { trackEvent } from "@/lib/gtag";
 
 export default function Header({ dict }: { dict: Dictionary }) {
   const { header } = dict;
@@ -19,7 +22,11 @@ export default function Header({ dict }: { dict: Dictionary }) {
           <a href="#how-it-works" className="text-sm font-medium text-ink/80 transition hover:text-ink">
             {header.howItWorks}
           </a>
-          <a href="#pricing" className="text-sm font-medium text-ink/80 transition hover:text-ink">
+          <a
+            href="#pricing"
+            onClick={() => trackEvent("click_pricing", { language: dict.lang })}
+            className="text-sm font-medium text-ink/80 transition hover:text-ink"
+          >
             {header.pricing}
           </a>
         </nav>
@@ -27,12 +34,19 @@ export default function Header({ dict }: { dict: Dictionary }) {
         <div className="hidden items-center gap-4 md:flex">
           <a
             href={header.switchHref}
+            onClick={() =>
+              trackEvent("change_language", {
+                from_language: dict.lang,
+                to_language: dict.lang === "en" ? "ar" : "en",
+              })
+            }
             className="rounded-full px-3 py-1.5 text-sm font-semibold text-muted transition hover:bg-paper-soft hover:text-ink"
           >
             {header.switchLabel}
           </a>
           <a
             href="#download"
+            onClick={() => trackEvent("click_download_app", { language: dict.lang })}
             className="rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-brand-dark"
           >
             {header.downloadApp}
