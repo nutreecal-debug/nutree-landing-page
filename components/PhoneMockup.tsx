@@ -19,11 +19,11 @@ export default function PhoneMockup({ lang, tilt = true }: { lang: Lang; tilt?: 
   const shot = SHOTS[lang];
 
   return (
-    <div className="relative w-[150px] sm:w-[270px]">
+    <div className="relative w-[165px] sm:w-[270px]">
       <div className="absolute -inset-4 -z-10 rounded-[3.5rem] bg-mint/20 blur-3xl sm:-inset-8" aria-hidden="true" />
 
-      <div className="absolute -end-3 top-11 z-10 grid h-10 w-10 place-items-center rounded-full bg-paper shadow-soft ring-1 ring-black/5 sm:-end-5 sm:top-16 sm:h-14 sm:w-14">
-        <Trophy className="h-4 w-4 text-brand sm:h-6 sm:w-6" strokeWidth={1.75} />
+      <div className="absolute -end-4 top-10 z-10 grid h-9 w-9 animate-float-sm place-items-center rounded-full bg-paper shadow-soft ring-1 ring-black/5 sm:-end-5 sm:top-16 sm:h-14 sm:w-14">
+        <Trophy className="h-3.5 w-3.5 text-brand sm:h-6 sm:w-6" strokeWidth={1.75} />
       </div>
 
       <div className={tilt ? "rotate-3" : ""}>

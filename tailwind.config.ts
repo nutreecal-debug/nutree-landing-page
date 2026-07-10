@@ -52,6 +52,10 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-14px)" },
         },
+        "float-sm": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-5px)" },
+        },
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
@@ -77,6 +81,7 @@ const config: Config = {
       },
       animation: {
         float: "float 6s ease-in-out infinite",
+        "float-sm": "float-sm 4.5s ease-in-out infinite",
         "fade-up": "fade-up 0.7s ease-out both",
         blob: "blob 12s ease-in-out infinite",
         "pulse-ring": "pulse-ring 3s ease-in-out infinite",
