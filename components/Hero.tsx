@@ -25,11 +25,11 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             </h1>
           </Reveal>
 
-          <Reveal delay={100} className="mt-8">
+          <Reveal delay={100} className="mt-5 sm:mt-8">
             <PhoneMockup lang={dict.lang} tilt={false} />
           </Reveal>
 
-          <Reveal delay={200} className="mt-8 flex flex-col items-center gap-4">
+          <Reveal delay={200} className="mt-5 flex flex-col items-center gap-4 sm:mt-8">
             <span className="text-lg font-bold text-ink">{hero.downloadLabel}</span>
             <AppStoreButtons lang={dict.lang} />
           </Reveal>
