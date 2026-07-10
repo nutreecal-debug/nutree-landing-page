@@ -1,12 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/storeLinks";
 import type { Dictionary } from "@/lib/types";
+
+const FALLBACK_DOWNLOAD_HREF = "#download-buttons";
+
+function detectStoreHref(): string {
+  if (typeof navigator === "undefined") return FALLBACK_DOWNLOAD_HREF;
+  const ua = navigator.userAgent || "";
+  const isIOS = /iPhone|iPad|iPod/i.test(ua) || (ua.includes("Macintosh") && navigator.maxTouchPoints > 1);
+  if (isIOS) return APP_STORE_URL;
+  if (/Android/i.test(ua)) return GOOGLE_PLAY_URL;
+  return FALLBACK_DOWNLOAD_HREF;
+}
 
 export default function MobileMenu({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(false);
+  const [downloadHref, setDownloadHref] = useState(FALLBACK_DOWNLOAD_HREF);
   const { header } = dict;
+
+  useEffect(() => {
+    setDownloadHref(detectStoreHref());
+  }, []);
 
   return (
     <div className="md:hidden">
@@ -37,6 +54,13 @@ export default function MobileMenu({ dict }: { dict: Dictionary }) {
               className="rounded-lg px-3 py-3 text-start font-medium text-muted hover:bg-paper-soft"
             >
               {header.switchLabel}
+            </a>
+            <a
+              href={downloadHref}
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-xl bg-brand px-4 py-3 text-center font-semibold text-white transition hover:bg-brand-dark"
+            >
+              {header.downloadShort}
             </a>
           </nav>
         </div>
