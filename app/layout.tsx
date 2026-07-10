@@ -15,8 +15,9 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Nutree",
-  description: "AI calorie tracking, made simple.",
+  title: "نيوتري — تتبع السعرات بالذكاء الاصطناعي",
+  description:
+    "صور وجبتك، اوصفها، أو سجلها يدويًا. نيوتري يساعدك تتابع السعرات، الماكروز، الماء، الخطوات، والوزن من تطبيق واحد.",
 };
 
 export default function RootLayout({
