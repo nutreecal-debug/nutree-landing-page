@@ -67,6 +67,7 @@ export interface Dictionary {
   download: {
     title: string;
     subtitle: string;
+    ctaLabel: string;
   };
   footer: {
     tagline: string;

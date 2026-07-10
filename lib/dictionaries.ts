@@ -71,6 +71,7 @@ export const en: Dictionary = {
   download: {
     title: "Snap it. Track it. Reach your goals.",
     subtitle: "Free to download on iPhone and Android.",
+    ctaLabel: "Download the app",
   },
   footer: {
     tagline: "AI calorie tracking, made simple.",
@@ -150,6 +151,7 @@ export const ar: Dictionary = {
   download: {
     title: "صوّرها. تابعها. حقق هدفك.",
     subtitle: "متوفر مجانًا على آيفون وأندرويد.",
+    ctaLabel: "حمّل التطبيق",
   },
   footer: {
     tagline: "تتبع السعرات بالذكاء الاصطناعي، ببساطة.",
